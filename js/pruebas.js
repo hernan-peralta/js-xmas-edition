@@ -13,3 +13,27 @@ function probarValidarNombre() {
 }
 
 probarValidarNombre();
+
+
+
+function probarValidarCiudad(){
+    console.assert(
+        validarCiudad('') === 'Debes seleccionar una provincia.', 'validarCiudad no validó que se haya elegido alguna provincia.'
+    );
+}
+
+probarValidarCiudad();
+
+
+
+function probarValidarDescripcionRegalo(){
+    console.assert(
+        validarDescripcionRegalo('') === 'Debes describir tu regalo.', 'validarDescripcionRegalo no validó que se haya ingresado una descripcion del regalo.'
+    )
+
+    console.assert(
+        validarDescripcionRegalo('ljkldsgjlkjsladjgsajldgjiowejtljasldgusaiodjgklasdjgasñdjgksjgñljljg') === 'Tienes hasta 50 caracteres para describir tu regalo', 'validarDescripcionRegalo no validó que se hayan escrito hasta 50 caracteres.'
+    )
+};
+
+probarValidarDescripcionRegalo();
