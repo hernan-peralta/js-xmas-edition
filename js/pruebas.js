@@ -12,7 +12,11 @@ function probarValidarNombre() {
   );
 
   console.assert(
-      validarNombre('Hernan') === '', 'validarNombre no funcionó correctamente'
+    validarNombre('@.') === 'Este campo debe contener caracteres válidos', 'validarNombre no validó que se hayan ingresado caracteres permitidos.'
+  );
+
+  console.assert(
+      validarNombre('Hernan') === '', 'validarNombre no funcionó correctamente con un nombre válido.'
   );
 }
 
@@ -25,7 +29,7 @@ function probarValidarCiudad(){
         validarCiudad('') === 'Debes seleccionar una provincia.', 'validarCiudad no validó que se haya elegido alguna provincia.'
     );
     console.assert (
-        validarCiudad('Mendoza') === '', 'validarCiudad no funcionó correctamente'
+        validarCiudad('Mendoza') === '', 'validarCiudad no funcionó correctamente con una ciudad válida.'
     );
 }
 
@@ -41,8 +45,13 @@ function probarValidarDescripcionRegalo(){
     console.assert(
         validarDescripcionRegalo('ljkldsgjlkjsladjgsajldgjiowejtljasldgusaiodjgklasdjgasñdjgksjgñljljg') === 'Tienes hasta 50 caracteres para describir tu regalo', 'validarDescripcionRegalo no validó que se hayan escrito hasta 50 caracteres.'
     )
+
     console.assert(
-        validarDescripcionRegalo('Bicicleta') === '', 'validarDescripcionRegalo no funcionó correctamente'
+        validarDescripcionRegalo('@@$') === 'Este campo debe contener caracteres válidos', 'validarDescripcionRegalo no validó que se hayan ingresado caracteres permitidos.'
+        )
+
+    console.assert(
+        validarDescripcionRegalo('Bicicleta') === '', 'validarDescripcionRegalo no funcionó correctamente con una descripción de regalo válida.'
     );
 };
 
